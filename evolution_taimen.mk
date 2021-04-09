@@ -29,7 +29,7 @@ TARGET_USES_MINI_GAPPS := true
 
 # Inherit device configuration
 $(call inherit-product, device/google/taimen/device.mk)
-$(call inherit-product-if-exists, vendor/google/taimen/taimen-vendor.mk)
+$(call inherit-product, vendor/google/taimen/taimen-vendor.mk)
 $(call inherit-product-if-exists, vendor/google_devices/taimen/proprietary/device-vendor.mk)
 
 PRODUCT_PACKAGES += \
