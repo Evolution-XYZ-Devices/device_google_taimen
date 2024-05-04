@@ -680,6 +680,7 @@ vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so|851db5940d5e9e4330e16221be114ae
 vendor/lib64/vendor.qti.hardware.mwqemadapter@1.0.so|c041dbfc99643e791e52c4e7f3a87050a8cd6c93
 vendor/lib64/vendor.qti.hardware.radio.internal.deviceinfo@1.0.so|392a120cce04039282963d313ca2606db5a3c4b6
 vendor/lib64/vendor.qti.hardware.slmadapter@1.0.so|000e0d2ac4450c0ad8baca06985bc9065e119f1e
+vendor/lib64/vendor.qti.hardware.soter@1.0.so|f9e9cba1e75eb4ef3703a6cb2d7a2ed7a49d7c36
 vendor/lib64/vendor.qti.latency@2.0.so|44e613964229ad11c5a69d1861b24f5897eff1d7
 vendor/lib64/vendor.qti.latency@2.1.so|3f5e3be5fcbc96b5f4c87dd76cfcc0e1dc858ad0
 
@@ -839,6 +840,7 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so|c1f7ec24f88ec385
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.1.so|4a2cbe6f3eda67912f993b2e960028fc34d2d9ef
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so|63d49cfc93f985312a906240c12901861c7a81e6
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so|f61553dec8c5800ea6a60e5ede093ea51e2f9af3
+vendor/lib64/vendor.qti.imsrtpservice@1.0.so|e2394f1a726c2046900f61706087a7338d91a001 
 vendor/radio/qcril_database/qcril.db|cfdebf667eb5bc293a72a3478053214adf8f0a59
 vendor/radio/qcril_database/upgrade/0_initial.sql|e00b243261d8941802bdea9d4e659dc5e927c216
 vendor/radio/qcril_database/upgrade/1_version_intro.sql|67b96cb3e94737bfe271b2519b9eb5fae17373a2

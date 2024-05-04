@@ -72,8 +72,11 @@ function blob_fixup() {
     vendor/bin/pm-service)
         grep -q libutils-v33.so "${2}" || "${PATCHELF}" --add-needed "libutils-v33.so" "${2}"
         ;;
+    system_ext/lib64/vendor.qti.imsrtpservice@1.0.so)
+        "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
+        ;;
     # Fix missing symbol _ZN7android8hardware7details17gBnConstructorMapE
-    lib*/com.qualcomm.qti.imsrtpservice@1.0.so | vendor/bin/cnd | vendor/bin/ims_rtp_daemon | vendor/bin/imsrcsd | vendor/bin/netmgrd | vendor/lib*/com.quicinc.cne.api@1.0.so)
+    vendor/lib64/com.qualcomm.qti.imscmservice@2.0.so|vendor/lib64/com.qualcomm.qti.imscmservice@2.1.so|vendor/lib64/com.qualcomm.qti.uceservice@2.0.so|vendor/lib64/vendor.qti.hardware.radio.am@1.0.so|vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0.so|vendor/lib64/vendor.qti.hardware.radio.ims@1.0.so|vendor/lib64/vendor.qti.hardware.radio.lpa@1.0.so|vendor/lib64/vendor.qti.hardware.radio.qcrilhook@1.0.so|vendor/lib64/vendor.qti.hardware.radio.qtiradio@1.0.so|vendor/lib64/vendor.qti.hardware.radio.uim@1.0.so|vendor/lib64/vendor.qti.hardware.radio.uim@1.1.so|vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so|vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so|vendor/lib64/vendor.qti.hardware.soter@1.0.so|vendor/lib64/vendor.qti.ims.callinfo@1.0.so|vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so|vendor/lib64/vendor.qti.imsrtpservice@1.0.so)
         "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
         ;;
     # Link dolby blobs with v33 libstagefright_foundation
