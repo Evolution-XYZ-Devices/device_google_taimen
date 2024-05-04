@@ -64,20 +64,13 @@ function blob_fixup() {
         sed -i 's/qulacomm/qualcomm/' "${2}"
         ;;
     # Fix missing symbols for IMS/Camera
-    system_ext/lib64/lib-imsvideocodec.so | system_ext/lib64/libimsmedia_jni.so)
-        for LIBGUI_SHIM in $(grep -L "libgui_shim.so" "${2}"); do
-            "${PATCHELF}" --add-needed "libgui_shim.so" "${LIBGUI_SHIM}"
-        done
+    system_ext/lib64/lib-imscamera.so)
+        grep -q "libgui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libgui_shim.so" "${2}"
         ;;
-    vendor/bin/pm-service)
-        grep -q libutils-v33.so "${2}" || "${PATCHELF}" --add-needed "libutils-v33.so" "${2}"
-        ;;
-    system_ext/lib64/vendor.qti.imsrtpservice@1.0.so)
-        "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
-        ;;
-    # Fix missing symbol _ZN7android8hardware7details17gBnConstructorMapE
-    vendor/lib64/com.qualcomm.qti.imscmservice@2.0.so|vendor/lib64/com.qualcomm.qti.imscmservice@2.1.so|vendor/lib64/com.qualcomm.qti.uceservice@2.0.so|vendor/lib64/vendor.qti.hardware.radio.am@1.0.so|vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0.so|vendor/lib64/vendor.qti.hardware.radio.ims@1.0.so|vendor/lib64/vendor.qti.hardware.radio.lpa@1.0.so|vendor/lib64/vendor.qti.hardware.radio.qcrilhook@1.0.so|vendor/lib64/vendor.qti.hardware.radio.qtiradio@1.0.so|vendor/lib64/vendor.qti.hardware.radio.uim@1.0.so|vendor/lib64/vendor.qti.hardware.radio.uim@1.1.so|vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so|vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so|vendor/lib64/vendor.qti.hardware.soter@1.0.so|vendor/lib64/vendor.qti.ims.callinfo@1.0.so|vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so|vendor/lib64/vendor.qti.imsrtpservice@1.0.so)
-        "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
+    system_ext/lib64/lib-imsvideocodec.so)
+        grep -q "libgui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libgui_shim.so" "${2}"
+        grep -q "libui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libui_shim.so" "${2}"
+        "${PATCHELF}" --replace-needed "libqdMetaData.so" "libqdMetaData.system.so" "${2}"
         ;;
     # Link dolby blobs with v33 libstagefright_foundation
     vendor/lib/libstagefright_soft_ddpdec.so | vendor/lib/libstagefright_soft_ac4dec.so | vendor/lib/libstagefrightdolby.so | vendor/lib64/libstagefright_soft_ddpdec.so | vendor/lib64/libdlbdsservice.so | vendor/lib64/libstagefright_soft_ac4dec.so | vendor/lib64/libstagefrightdolby.so)
