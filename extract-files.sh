@@ -63,15 +63,6 @@ function blob_fixup() {
     product/etc/sysconfig/nexus.xml)
         sed -i 's/qulacomm/qualcomm/' "${2}"
         ;;
-    # Fix missing symbols for IMS/Camera
-    system_ext/lib64/lib-imscamera.so)
-        grep -q "libgui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libgui_shim.so" "${2}"
-        ;;
-    system_ext/lib64/lib-imsvideocodec.so)
-        grep -q "libgui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libgui_shim.so" "${2}"
-        grep -q "libui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libui_shim.so" "${2}"
-        "${PATCHELF}" --replace-needed "libqdMetaData.so" "libqdMetaData.system.so" "${2}"
-        ;;
     # Link dolby blobs with v33 libstagefright_foundation
     vendor/lib/libstagefright_soft_ddpdec.so | vendor/lib/libstagefright_soft_ac4dec.so | vendor/lib/libstagefrightdolby.so | vendor/lib64/libstagefright_soft_ddpdec.so | vendor/lib64/libdlbdsservice.so | vendor/lib64/libstagefright_soft_ac4dec.so | vendor/lib64/libstagefrightdolby.so)
         "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"

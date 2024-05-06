@@ -681,7 +681,6 @@ vendor/etc/cne/wqeclient/VZW/VZW_profile3.xml|9b123d81c9b8991499cda33b0706810e0c
 vendor/etc/cne/wqeclient/VZW/VZW_profile4.xml|ff91feb5060a6df07e3e4d9bc99ae58bccad7649
 vendor/etc/cne/wqeclient/VZW/VZW_profile5.xml|f76c894f3c6d5b6ed35113a088dc3174c900501b
 vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml|14d136e7fcc682311757d3edc0b9d3eaeba11815
-vendor/etc/default-permissions/com.qualcomm.qti.cne.xml|c63c37d067e3009735fbc54d4603d43d7d6623e1
 vendor/lib64/libcacertclient.so|69ae73b9be13507ff39398ac5813ad709b8b7c32
 vendor/lib64/vendor.qti.hardware.cacert@1.0.so|1633c31212d1ea9338b79ebfc2476f83424f36ee
 vendor/lib64/vendor.qti.hardware.soter@1.0.so|f9e9cba1e75eb4ef3703a6cb2d7a2ed7a49d7c36
@@ -729,6 +728,7 @@ vendor/lib64/lib-rtpsl.so|44c91df047d3ae8dfc8b747e7fdd1c48d4e48dc0
 vendor/lib64/lib-siputility.so|d478b100a73911120e3cb92474aa0f143e5345a9
 vendor/lib64/lib-uceservice.so|c7af1b597aa7d62d4a710ac8b012207e2a749bfc
 vendor/lib64/librcc.so|e35056f3b5c0790d65ded14ed48dd1ed1296ecc7
+vendor/lib64/libsoc_helper.so|affbc1cc49d3df3a6e174a21bf3fe79c7130d1c0
 vendor/lib64/vendor.qti.hardware.radio.ims@1.0.so|c733d10f069f76d2f29e9719d0c50125a6acf230
 vendor/lib64/vendor.qti.hardware.radio.ims@1.1.so|67f1a71c8c4a4340bf644c9e3fc368962b519368
 vendor/lib64/vendor.qti.hardware.radio.ims@1.2.so|1967c6e57583e8061291437fe13f16d3a84ae7b0
@@ -751,7 +751,6 @@ vendor/lib64/vendor.qti.imsrtpservice@3.0.so|460e589128fce0b0e83bb3c75aa32f7e1a9
 # QMI - from LA.UM.9.6.3.r1-04400-89xx.0
 vendor/etc/qmi_fw.conf|7aa8186a05b3e1ac6ce556bb6e9ae613df0e82c1
 vendor/etc/sec_config|38ed44170badad7ae9a05f53223e1addf8780083
-vendor/lib/libdsi_netctrl.so|7893cdd6d0f656f9d5f1193fa074713ac0d8682f
 vendor/lib/libpdmapper.so|0994429410af8b8e187f94aa9a4575de81bb7cc4
 vendor/lib/libqmi_legacy.so|b9cd2f529f7f8747345787e650f1b54b77551d13
 vendor/lib64/libqmi_legacy.so|f324c6701ecf78ff50975c0bc7f99aea09cb3539
